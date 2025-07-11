@@ -1,0 +1,142 @@
+/* ========== BASE SKY ANIMATION ========== */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: linear-gradient(to bottom right, #000000, #4a3030);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ========== CONTAINER ========== */
+.places-container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========== TITLE ========== */
+h2 {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px #00000090;
+}
+
+/* ========== SEARCH BAR ========== */
+.search-wrapper {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-bar {
+  animation: fadeIn 1s ease;
+}
+
+.search-bar input,
+.search-bar button {
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+.search-bar input {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+.search-bar button {
+  background-color: #000000;
+  color: white;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.search-bar button:hover {
+  background-color: #25342b;
+}
+
+/* ========== LISTS & ITEMS ========== */
+.places-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-results {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 10px;
+}
+
+.places-list li,
+.search-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 12px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeInUp 0.7s ease forwards;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== BUTTON ICONS ========== */
+.place-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.place-actions button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.place-actions button:hover {
+  transform: scale(1.2);
+}
+
+.complete-btn { color: #2ecc71; }
+.delete-btn { color: #e74c3c; }
+
+/* ========== ANIMATION ON MOUNT ========== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

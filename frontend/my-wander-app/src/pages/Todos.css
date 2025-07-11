@@ -1,0 +1,145 @@
+/* General container */
+.todos-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Input section */
+.add-todo-box {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.add-btn {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-btn:hover {
+  background-color: #3f9443;
+}
+
+/* Todo list */
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease;
+}
+
+.todo-item:hover {
+  background: #f0f0f0;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+  word-break: break-word;
+}
+
+.action-icons {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.15);
+}
+
+.icon.edit {
+  color: #007bff;
+}
+
+.icon.delete {
+  color: #d11a2a;
+}
+
+/* Edit Mode */
+.edit-input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  margin-right: 10px;
+}
+
+.save-btn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  background: #2196f3;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .add-todo-box {
+    flex-direction: column;
+  }
+
+  .add-btn {
+    width: 100%;
+    padding: 0.7rem;
+  }
+
+  .todo-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-text {
+    margin-bottom: 0.5rem;
+  }
+
+  .edit-input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .save-btn {
+    width: 100%;
+  }
+
+  .action-icons {
+    justify-content: flex-start;
+  }
+}

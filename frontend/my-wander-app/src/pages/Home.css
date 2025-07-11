@@ -1,0 +1,76 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #e0f7fa, #e1bee7);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.home-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  animation: fadeIn 1s ease-in;
+}
+
+.home-card h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #6a1b9a;
+}
+
+.home-card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.home-feature {
+  background: #f3e5f5;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.home-feature:hover {
+  background: #ce93d8;
+  color: white;
+  transform: scale(1.05);
+}
+
+.home-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.home-note {
+  font-style: italic;
+  color: #555;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

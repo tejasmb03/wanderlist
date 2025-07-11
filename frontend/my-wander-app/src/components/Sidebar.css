@@ -1,0 +1,140 @@
+/* src/components/Sidebar.css */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.menu-icon {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 1101;
+  color: #333;
+  background: #fff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -80%;
+  width: 80%;
+  max-width: 200px;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #e0f7fa, #e1bee7);
+  padding: 80px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  z-index: 1100;
+}
+
+.sidebar.visible {
+  left: 0;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  margin: 14px 0;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar a:hover {
+  color: #0077cc;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 19px;
+  color: #000000;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.logout-container {
+  margin-top: auto;
+}
+
+.logout-btn {
+  background: #000000;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-btn:hover {
+  background: #005fa3;
+  transform: scale(1.03);
+}
+
+.content {
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: 200px;
+    left: -200px;
+  }
+
+  .sidebar.visible {
+    left: 0;
+  }
+
+  .sidebar-open .content {
+    margin-left: 200px;
+  }
+}

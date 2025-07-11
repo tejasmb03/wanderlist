@@ -1,0 +1,62 @@
+/* src/pages/signup.css */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #f3e5f5, #e1bee7);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.auth-form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.auth-form h2 {
+  margin-bottom: 20px;
+  color: #6a1b9a;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #8e24aa;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-form button:hover {
+  background-color: #6a1b9a;
+}
+
+.auth-form p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.auth-form a {
+  color: #8e24aa;
+  text-decoration: none;
+  font-weight: bold;
+}
