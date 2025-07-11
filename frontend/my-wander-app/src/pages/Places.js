@@ -1,4 +1,3 @@
-// src/pages/Places.js
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Places.css";
@@ -8,7 +7,7 @@ const PlacesScreen = () => {
   const [query, setQuery] = useState("");
   const [manualPlace, setManualPlace] = useState("");
   const [results, setResults] = useState([]);
-  const userId = localStorage.getItem("user_id");
+  const userId = 1;
 
   useEffect(() => {
     fetchPlaces();
@@ -17,6 +16,7 @@ const PlacesScreen = () => {
   const fetchPlaces = async () => {
     try {
       const response = await axios.get(`http://localhost:5000/places/${userId}`);
+      // 🔽 Sort: uncompleted first, completed later
       const sorted = response.data.sort((a, b) => a.completed - b.completed);
       setPlaces(sorted);
     } catch (error) {
@@ -46,7 +46,7 @@ const PlacesScreen = () => {
       fetchPlaces();
       setQuery("");
       setResults([]);
-      setManualPlace("");
+      setManualPlace(""); // Clear manual input
     } catch (error) {
       console.error("Failed to add place:", error);
     }
@@ -72,9 +72,9 @@ const PlacesScreen = () => {
 
   return (
     <div className="places-container">
-      <h2>📍Places to Visit</h2>
+      <h2>Places to Visit</h2>
 
-      <div className="search-wrapper search-bar">
+      <div className="search-bar">
         <input
           type="text"
           placeholder="Search for places..."
@@ -98,20 +98,31 @@ const PlacesScreen = () => {
         {results.map((place, index) => (
           <div key={index} className="search-item">
             {place.display_name}
-            <button onClick={() => handleAddPlace(place.display_name)}>Add</button>
+            <button onClick={() => handleAddPlace(place.display_name)}>
+              Add
+            </button>
           </div>
         ))}
       </div>
 
       <ul className="places-list">
         {places.map((place) => (
-          <li key={place.id} className={place.completed ? "completed" : ""}>
+          <li
+            key={place.id}
+            className={place.completed ? "completed" : ""}
+          >
             {place.name}
             <div className="place-actions">
-              <button className="complete-btn" onClick={() => handleToggleComplete(place.id)}>
-                ✅
+              <button
+                className="complete-btn"
+                onClick={() => handleToggleComplete(place.id)}
+              >
+                ✅️
               </button>
-              <button className="delete-btn" onClick={() => handleDeletePlace(place.id)}>
+              <button
+                className="delete-btn"
+                onClick={() => handleDeletePlace(place.id)}
+              >
                 🗑️
               </button>
             </div>
