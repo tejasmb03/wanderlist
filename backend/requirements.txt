@@ -1,4 +1,4 @@
-Flask
-Flask-CORS
-Flask-SQLAlchemy
-Werkzeug
+Flask==2.x.x
+Flask-CORS==x.x.x
+Flask-SQLAlchemy==x.x.x
+Werkzeug==x.x.x
